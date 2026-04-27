@@ -4,6 +4,8 @@ import com.devLucas.BarberFlow.enums.Role;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +20,9 @@ public class User implements Serializable {
     private String username;
     private String password;
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private List<AccountsPayable> accountsPayables = new ArrayList<>();
 
     public User() {
     }
