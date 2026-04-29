@@ -22,6 +22,9 @@ public class User implements Serializable {
     private Role role;
 
     @OneToMany(mappedBy = "user")
+    private List<Appointments> appointments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
     private List<AccountsPayable> accountsPayables = new ArrayList<>();
 
     public User() {
